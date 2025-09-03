@@ -1,0 +1,185 @@
+scheming_version: 2
+dataset_type: dataset
+about: A reimplementation of the default CKAN dataset schema
+about_url: https://github.com/ckan/ckanext-scheming
+
+
+dataset_fields:
+
+- field_name: title
+  label: Title
+  preset: title
+  form_placeholder: eg. A descriptive title
+
+- field_name: name
+  label: URL
+  preset: dataset_slug
+  form_placeholder: eg. my-dataset
+
+- field_name: notes
+  label: Description
+  form_snippet: markdown.html
+  form_placeholder: eg. Some useful notes about the data
+
+- field_name: tag_string
+  label: Tags
+  preset: tag_string_autocomplete
+  form_placeholder: eg. economy, mental health, government
+
+- field_name: license_id
+  label: License
+  form_snippet: license.html
+  help_text: License definitions and additional information can be found at http://opendefinition.org/
+
+- field_name: owner_org
+  label: Organization
+  preset: dataset_organization
+
+- field_name: url
+  label: Source
+  form_placeholder: http://example.com/dataset.json
+  display_property: foaf:homepage
+  display_snippet: link.html
+  display_snippet: null
+
+- field_name: version
+  label: Version
+  validators: ignore_missing unicode_safe package_version_validator
+  form_placeholder: '1.0'
+  display_snippet: null
+
+- field_name: author
+  label: Author
+  form_placeholder: Joe Bloggs
+  display_property: dc:creator
+  display_snippet: null
+
+- field_name: author_email
+  label: Author Email
+  form_placeholder: joe@example.com
+  display_property: dc:creator
+  display_snippet: email.html
+  display_email_name_field: author
+  display_snippet: null
+
+- field_name: maintainer
+  label: Maintainer
+  form_placeholder: Joe Bloggs
+  display_property: dc:contributor
+  display_snippet: null
+
+- field_name: maintainer_email
+  label: Maintainer Email
+  form_placeholder: joe@example.com
+  display_property: dc:contributor
+  display_snippet: email.html
+  display_email_name_field: maintainer
+  display_snippet: null
+
+- field_name: custom_abbreviation
+  label: Abbreviation
+
+- field_name: custom_type
+  label: Type
+  preset: multiple_checkbox
+  choices:
+    - value: API
+      label: API
+    - value: App
+      label: App
+    - value: Book
+      label: Book
+    - value: code
+      label: code
+    - value: database
+      label: database
+    - value: Dataset
+      label: Dataset
+    - value: Dissertation
+      label: Dissertation
+    - value: website
+      label: website
+    - value: InteractiveResource
+      label: InteractiveResource
+    - value: JournalArticle
+      label: JournalArticle
+    - value: map
+      label: map
+    - value: metadata portal
+      label: metadata portal
+    - value: microbase
+      label: microbase
+    - value: Model
+      label: Model
+    - value: Report
+      label: Report
+    - value: Software
+      label: Software
+    - value: Text
+      label: Text
+    - value: Tool
+      label: Tool
+    - value: other
+      label: other
+
+- field_name: custom_domain
+  label: Domain
+  preset: multiple_checkbox
+  choices:
+    - value: Hazardous substances
+      label: Hazardous substances 
+    - value: Mechanisms of effect
+      label: Mechanisms of effect
+    - value: Production and usage
+      label: Production and usage
+    - value: Occupational exposure
+      label: Occupational exposure
+    - value: Occupational disease
+      label: Occupational disease
+    - value: Individual and societal burden
+      label: Individual and societal burden
+    - value: Other
+      label: Other 
+
+- field_name: custom_access
+  label: Acces rights
+  # preset: multiple_checkbox
+  # choices:
+  #   - value: Open access
+  #     label: Open access
+  #   - value: Restricted access
+  #     label: Restricted access
+
+- field_name: custom_id
+  label: Identifier
+  display_snippet: link.html
+
+- field_name: custom_url
+  label: URL
+  display_snippet: link.html
+
+- field_name: custom_owner
+  label: Owner
+
+- field_name: custom_contact
+  label: Contact email
+  display_snippet: link.html
+
+resource_fields:
+
+- field_name: url
+  label: URL
+  preset: resource_url_upload
+
+- field_name: name
+  label: Name
+  form_placeholder: eg. January 2011 Gold Prices
+
+- field_name: description
+  label: Description
+  form_snippet: markdown.html
+  form_placeholder: Some useful notes about the data
+
+- field_name: format
+  label: Format
+  preset: resource_format_autocomplete
